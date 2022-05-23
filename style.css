@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;600;800&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --ff: "Fira Sans";
+  --fw-n: 300;
+  --fw-m: 600;
+  --fw-b: 900;
+
+  --fs-2: 5rem;
+  --fs-p: 1rem;
+  --fs-3: 0.8rem;
+
+  --primary-clr: #225560;
+  --accent-clr: #ef6461;
+
+  --spacer: 1rem;
+  --spacer-btwcards: calc(var(--spacer) * 2);
+  --spacer-insidecards: calc(var(--spacer) * 3);
+  --br: 5px;
+  --shadow: 0 0 1em rgba(0, 0, 0, 0.25);
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--ff);
+}
+h2 {
+  font-size: var(--fs-2);
+  font-weight: var(--fw-l);
+}
+p {
+  margin: 0 0 var(--spacer);
+}
+strong {
+  font-weight: var(--fw-m);
+}
+button {
+  /* display: inline-block; */
+  background: var(--primary-clr);
+  color: white;
+  padding: 1em 1.5em;
+  border-style: none;
+  border-radius: var(--br);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  margin-top: var(--spacer);
+  cursor: pointer;
+}
+.contanier {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+.Plans {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: var(--spacer-insidecards);
+}
+.card {
+  border-radius: var(--br);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+.card-important {
+  --primary-clr: var(--accent-clr);
+}
+.card-title {
+  background-color: var(--primary-clr);
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 16px;
+  text-align: center;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+.card-price {
+  color: var(--primary-clr);
+  padding: 1em var(--spacer-insidecards);
+  margin: 0;
+  font-weight: var(--fw-b);
+  font-size: 2em;
+}
+.card-price span {
+  font-weight: var(--fw-n);
+  font-size: 0.5em;
+}
+.card-body {
+  padding: 0 var(--spacer-insidecards) 2em;
+}
+@media (max-width: 700px) {
+  .card {
+    margin-bottom: var(--spacer-btwcards);
+  }
+  body {
+    height: auto;
+  }
+  .Plans {
+    display: contents;
+  }
+}
